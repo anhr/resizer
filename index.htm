@@ -1,0 +1,145 @@
+﻿<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>resizer</title>
+	<meta name="author" content="Andrej Hristoliubov anhr@mail.ru">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta name="description" content="Example of resizing of the HTML element by mouse dragging"/>
+	<meta name="keywords" content="resize, HTML element, javascript developing"/>
+	
+	<!--
+		Get all scripts from current site.
+		You can edit all scripts,
+		but my updates in the gitgub https://github.com/anhr/resizer project is not available.
+	 -->
+	<script type="text/javascript" src="Common.js"></script>
+    <script type="text/javascript" src="resizer.js"></script>
+ 
+	<!--
+		Get all scripts from my project in gitgub https://github.com/anhr/resizer.
+		You can use all my updates immediately if you getting all scripts from my project in gitgub,
+		but you can not edit scripts, except if you do a contribute in my github project.
+		
+		See details in http://stackoverflow.com/questions/17341122/link-and-execute-external-javascript-file-hosted-on-github
+	 -->
+	 <!--
+	<script type="text/javascript" src="https://rawgit.com/anhr/resizer/master/Common.js"></script>
+	<script type="text/javascript" src="https://rawgit.com/anhr/resizer/master/resizer.js"></script>
+	 -->
+	
+    <style>
+        .element
+	        {
+		        border: 1px solid #999999;
+                border-radius: 4px;
+                margin: 5px;
+                padding: 5px;
+	        }
+    </style>
+    <script type="text/javascript">
+        function onresize() {
+            var element1 = document.getElementById("element1");
+            var element2 = document.getElementById("element2");
+            var element3 = document.getElementById("element3");
+            var ResizerY = document.getElementById("resizerY");
+            ResizerY.style.top = element3.offsetTop - 15 + "px";
+            var topElements = document.getElementById("topElements");
+            topElements.style.height = ResizerY.offsetTop - 20 + "px";
+            var height = topElements.clientHeight - 32;
+            if (height < 0)
+                height = 0;
+            height += 'px';
+            element1.style.height = height;
+            element2.style.height = height;
+        }
+        function resizeX(x) {
+            //consoleLog("mousemove(X = " + e.pageX + ")");
+            var element2 = document.getElementById("element2");
+            element2.style.width =
+                element2.parentElement.clientWidth
+                + document.getElementById('rezizeArea').offsetLeft
+                - x
+                + 'px';
+        }
+        function resizeY(y) {
+            //consoleLog("mousemove(Y = " + e.pageY + ")");
+            var element3 = document.getElementById("element3");
+            var height =
+                element3.parentElement.clientHeight
+                + document.getElementById('rezizeArea').offsetTop
+                - y
+            ;
+            //consoleLog("mousemove(Y = " + e.pageY + ") height = " + height + " element3.parentElement.clientHeight = " + element3.parentElement.clientHeight);
+            if ((height + 100) > element3.parentElement.clientHeight)
+                return;//Limit of the height of the elemtnt 3
+            element3.style.height = height + 'px';
+            onresize();
+        }
+        var emailSubject = "Resizer example error";
+    </script>
+</head>
+<body>
+	<p><a href='../'>Home</a> | <a href='https://github.com/anhr/resizer' target="_blank">GitHub</a></p>
+	
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<!-- Рекламный блок -->
+	<ins class="adsbygoogle"
+		 style="display:inline-block;width:728px;height:90px"
+		 data-ad-client="ca-pub-2575715742658777"
+		 data-ad-slot="8810450588"></ins>
+	<script>
+	(adsbygoogle = window.adsbygoogle || []).push({});
+	</script>	
+	
+	<div id='Message'></div>
+	<h1>Resizer</h1>
+	<p>Please see example of resizing of the HTML element by mouse dragging.</p>
+    <ul>
+        <li>Drag the red rectangle if you want to change the width of the Element 1 and Element 2</li>
+        <li>Drag the green rectangle if you want to change the height of the Element 1 Element 2 and Element 3</li>
+        <li>Drag the small blue square at the left bottom of the Element 2, if you want to resize of the Element 1 Element 2 and Element 3</li>
+    </ul>
+    <div id="rezizeArea" style="width:1000px; height:250px; overflow:auto; position: relative;" class="element">
+        <div id="topElements" class="element" style="overflow:auto; position:absolute; left: 0; top: 0; right:0;">
+            <div id="element2" class="element" style="width: 30%; height:10px; float: right; position: relative;">
+                Element 2
+                <div id="resizerXY" style="width: 10px; height: 10px; background: blue; position:absolute; left: 0; bottom: 0;"></div>
+                <script type="text/javascript">
+                    resizerXY("resizerXY", function (e) {
+                            resizeX(e.pageX + 10);
+                            resizeY(e.pageY + 50);
+                        });
+                </script>
+            </div>
+            <div id="resizerX" style="width: 10px; height:100%; background: red; float: right;"></div>
+            <script type="text/javascript">
+                resizerX("resizerX", function (e) {
+                    resizeX(e.pageX + 25);
+                });
+            </script>
+            <div id="element1" class="element" style="height:10px; overflow:auto;">Element 1</div>
+        </div>
+        <div id="resizerY" style="height:10px; position:absolute; left: 0; right:0; background: green;"></div>
+        <script type="text/javascript">
+            resizerY("resizerY", function (e) {
+                resizeY(e.pageY + 25);
+            });
+        </script>
+        <div id="element3" class="element" style="height:100px; position:absolute; left: 0; bottom: 0; right:0;">Element 3</div>
+    </div>
+    <script type="text/javascript">
+        onresize();
+    </script>
+    <hr>
+    <b>Currently tested in the follow bowsers:</b>
+    <ul>
+        <li>IE9 ... IE11, Edge 20</li>
+        <li>Crome 46</li>
+        <li>Firefox 41</li>
+        <li>Opera 32</li>
+        <li>Safari 5.1, Safari iOS 4.3.3</li>
+    </ul>
+
+    Have a job for me? Please read <a href='../AboutMe/' target="_blank">About Me</a>.
+</body>
+</html>
