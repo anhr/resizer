@@ -3,7 +3,7 @@
  * The resizer is Javascript object for resizing of the HTML element by mouse dragging.
  * Author: Andrej Hristoliubov
  * email: anhr@mail.ru
- * About me: https://googledrive.com/host/0B5hS0tFSGjBZfkhKS1VobnFDTkJKR0tVamxadmlvTmItQ2pxVWR0WDZPdHZxM2hzS1J3ejQ/AboutMe/
+ * About me: http://anhr.ucoz.net/AboutMe/
  * Sources: https://github.com/anhr/resizer
  *          http://jsfiddle.net/3jMQD/ 
  *          http://stackoverflow.com/questions/8960193/how-to-make-html-element-resizable-using-pure-javascript
