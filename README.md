@@ -2,7 +2,7 @@
 
 Resizing of the HTML element by mouse dragging.
 
-Example: <a href='https://googledrive.com/host/0B5hS0tFSGjBZfkhKS1VobnFDTkJKR0tVamxadmlvTmItQ2pxVWR0WDZPdHZxM2hzS1J3ejQ/resizer/' target="_blank">Resizer</a>.
+Example: <a href='http://anhr.ucoz.net/resizer/' target="_blank">Resizer</a>.
 
 ## On the following browsers have been successfully tested:
 
@@ -18,6 +18,6 @@ Safari 5.1, Safari iOS 4.3.3
 
 
 ## Have a job for me?
-Please read <a href='https://googledrive.com/host/0B5hS0tFSGjBZfkhKS1VobnFDTkJKR0tVamxadmlvTmItQ2pxVWR0WDZPdHZxM2hzS1J3ejQ/AboutMe/' target="_blank">About Me</a>.
+Please read <a href='http://anhr.ucoz.net/AboutMe/' target="_blank">About Me</a>.
 
 
