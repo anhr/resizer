@@ -17,6 +17,8 @@ Opera 32
 Safari 5.1, Safari iOS 4.3.3
 
 
+I'm using this code on the <a href='http://bonalink.hopto.org/Chat/' target="_blank">Bonalink</a> site.
+
 ## Have a job for me?
 Please read <a href='http://anhr.ucoz.net/AboutMe/' target="_blank">About Me</a>.
 
