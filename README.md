@@ -2,7 +2,7 @@
 
 Resizing of the HTML element by mouse dragging.
 
-Example: <a href='https://anhr.github.io/resizer/' target="_blank">Resizer</a>.
+Example: <a href='http://anhr.github.io/resizer/' target="_blank">Resizer</a>.
 
 ## On the following browsers have been successfully tested:
 
